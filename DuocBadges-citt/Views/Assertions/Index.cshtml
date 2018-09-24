@@ -1,0 +1,95 @@
+﻿@model IEnumerable<DuocBadges.Models.Assertions>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Narrative)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expires)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Revoked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RevocationReason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evidence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recipient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Verification)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Narrative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expires)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Revoked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RevocationReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Badge.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Evidence.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recipient.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verification.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

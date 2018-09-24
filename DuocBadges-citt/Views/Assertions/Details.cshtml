@@ -1,0 +1,84 @@
+﻿@model DuocBadges.Models.Assertions
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assertions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuedOn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IssuedOn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Narrative)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Narrative)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Expires)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Expires)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Revoked)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Revoked)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RevocationReason)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RevocationReason)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Badge)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Badge.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Recipient.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Verification)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Verification.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
