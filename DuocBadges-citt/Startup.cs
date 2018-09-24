@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DuocBadges.Models;
+using Microsoft.EntityFrameworkCore;
+using DuocBadges;
 
 namespace DuocBadges_citt
 {
@@ -33,6 +36,8 @@ namespace DuocBadges_citt
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            var connection = @"Data Source=duocbadges.database.windows.net;Initial Catalog=Duoc Badges;User ID=duoc;Password=Admin0918;ConnectRetryCount=0";
+            services.AddDbContext<DuocBadgesContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
