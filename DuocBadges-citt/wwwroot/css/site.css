@@ -5,6 +5,10 @@ body {
     padding-bottom: 20px;
 }
 
+.nav-items{
+    font-size: medium;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

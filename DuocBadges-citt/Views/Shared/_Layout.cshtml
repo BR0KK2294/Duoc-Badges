@@ -17,11 +17,11 @@
     
 </head>
 <body>
-
+    <link href="~/css/tableStyle.css" rel="stylesheet" />
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background: #435d7d;">
+        <nav class="navbar navbar-expand-lg navbar-dark p-3" style="background: #435d7d;" id="myNav">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="logo 50 años - copia.png" style="width: 50px;" alt=""> <b>Duoc</b>
+                <img src="" style="width: 50px;" alt=""> <b>Duoc</b>
                 Badges
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,27 +29,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a asp-area="" asp-controller="Badges" asp-action="Index">Insignias<span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav mr-auto" style="font-size: 16px;">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Badges" asp-action="Index">Insignias</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" asp-controller="Images" asp-action="Index">Imagenes</a>
+                        <a class="nav-link" asp-area="" asp-controller="Images" asp-action="Index">Imagenes</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" asp-controller="Assertions" asp-action="Index">Entregar Insignias</a>
+                        <a class="nav-link" asp-area="" asp-controller="Assertions" asp-action="Index">Entregar Insignias</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-0">
-                    <li class="nav-item ml-0">
-                        <a asp-area="" asp-controller="Profiles" asp-action="Index">Perfil</a>
+                    <li class="nav-item ml-0" style="font-size: 16px; ">
+                        <a class="nav-link" asp-area="" asp-controller="Profiles" asp-action="Index">Perfil</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    
+
 
     <div class="container body-content">
         @RenderBody()

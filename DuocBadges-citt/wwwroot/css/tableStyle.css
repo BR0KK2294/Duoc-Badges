@@ -268,3 +268,8 @@ table.table .avatar {
 .modal form label {
     font-weight: normal;
 }
+
+#myNav .nav-link{
+    font-size: 14px;
+}
+/*Image*/
