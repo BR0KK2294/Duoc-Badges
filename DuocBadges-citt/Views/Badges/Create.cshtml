@@ -1,10 +1,14 @@
 ﻿@model DuocBadges.Models.Badge
 
+
 @{
     ViewData["Title"] = "Create";
 }
+<link href="tagsinput.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="~/css/tableStyle.css" />
 <script src="~/js/image.js"></script>
+<script src="tagsinput.js"></script>
+
 <div class="container">
     <div class="table-wrapper">
         <div class="table-title">
@@ -23,27 +27,64 @@
                         <div class="input-group pt-4">
                             <div class="custom-file">
                                 <input type="file" accept="image/png, image/jpeg, image/gif" class="custom-file-input" id="imgInp" aria-describedby="inputGroupFileAddon04">
-                                <label class="custom-file-label" for="imgInp"></label>
+                                <label class="custom-file-label " for="imgInp"></label>
                             </div>
                         </div>
-                        <img id="img-upload" />
+                        <img class="p-4" id="img-upload" />
                     </div>
-                    
+
+                    <div class="jumbotron border p-4">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0 text-center ">
+                                        <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <i class="material-icons align-bottom">add</i> Agregar Tags (Opcional)
+                                        </button>
+                                    </h5>
+
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        <div class="form-group">
+                                            <label class="control-label col-form-label-lg">Agregar Tag</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" data-role="tagsinput">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <i class="material-icons align-bottom">add</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label asp-for="Name" class="control-label">Nombre</label>
-                        <input asp-for="Name" class="form-control" />
+                        <label asp-for="Name" class="control-label col-form-label-lg">Nombre</label>
+                        <input asp-for="Name" class="form-control form-control-lg" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Description" class="control-label">Descripción</label>
-                        <textarea asp-for="Description" class="form-control"></textarea>
+                        <label asp-for="Description" class="control-label col-form-label-lg">Descripción</label>
+                        <textarea asp-for="Description" class="form-control form-control-lg"></textarea>
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="CriteriaId" class="control-label">Criterio</label>
-                        <select asp-for="CriteriaId" class="form-control" asp-items="ViewBag.CriteriaId"></select>
+                    <div class="jumbotron border p-4">
+                        <div class="form-group">
+                            <label asp-for="CriteriaId" class="control-label col-form-label-lg">Criterio</label>
+                            <!--Area de texto para describir el criterio-->
+                            <textarea asp-for="CriteriaId" class="form-control form-control-lg" asp-items="ViewBag.CriteriaId"></textarea>
+                            <hr />
+                            <label class="control-label col-form-label-lg ">URL</label>
+                            <input type="url" class="form-control form-control-lg" alt="URL" />
+                        </div>
                     </div>
                 </div>
 
